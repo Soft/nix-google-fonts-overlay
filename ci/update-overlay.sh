@@ -2,7 +2,7 @@
 
 main () {
   if [[ "$TRAVIS" != "true" ]]; then
-    echo "This script is only meant to be used as a part of CI pipeline" >&2
+    echo "This script is only meant to be used as a part of CI pipeline"
     return 1
   fi
 
@@ -40,11 +40,12 @@ update_overlay () {
 update_readme () {
   local font_count
   echo "Updating README.md"
-  font_count="$(ls pkgs | wc -l)" &&
-  sed -iE "s/\\*\\*[[:digit:]]+ high-quality fonts packaged for Nix\\*\\*/\\*\\*$font_count high-quality fonts packaged for Nix\\*\\*/" README.md
+  font_count="$(ls pkgs | wc -l)"
+  sed -E -i "s/\\*\\*[[:digit:]]+ high-quality fonts packaged for Nix\\*\\*/\\*\\*$font_count high-quality fonts packaged for Nix\\*\\*/" README.md
 }
 
 push_changes () {
+  local message
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis CI"
 
@@ -57,13 +58,21 @@ push_changes () {
 
   echo "Committing changes"
 
-  git commit -m "[skip ci] Automatic update $(date "+%Y-%m-%d") (Build $TRAVIS_BUILD_NUMBER)" >/dev/null 2>&1
+  message="[skip ci] Automatic update $(date "+%Y-%m-%d") (Build $TRAVIS_BUILD_NUMBER)"
+
+  if ! git commit -m "$message" >/dev/null 2>&1; then
+    echo "Failed to commit"
+    return 1
+  fi
 
   echo "Pushing"
 
   git remote rm origin >/dev/null 2>&1
-  git remote add origin "${GITHUB_OAUTH_TOKEN}@github.com/Soft/nix-google-fonts-overlay.git" >/dev/null 2>&1
-  git push origin master --quiet >/dev/null 2>&1
+  git remote add origin "https://${GITHUB_OAUTH_TOKEN}@github.com/Soft/nix-google-fonts-overlay.git" >/dev/null 2>&1
+  if ! git push origin master --quiet >/dev/null 2>&1; then
+    echo "Failed to push"
+    return 1
+  fi
   git remote rm origin >/dev/null 2>&1
 
   echo "Done"
