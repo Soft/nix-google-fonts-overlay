@@ -34,6 +34,14 @@ update_overlay () {
   echo "Updating overlay contents"
   rm -rf default.nix pkgs
   nix-google-fonts-gen ~/fonts .
+  update_readme
+}
+
+update_readme () {
+  local font_count
+  echo "Updating README.md"
+  font_count="$(ls pkgs | wc -l)" &&
+  sed -iE "s/\\*\\*[[:digit:]]+ high-quality fonts packaged for Nix\\*\\*/\\*\\*$font_count high-quality fonts packaged for Nix\\*\\*/" README.md
 }
 
 push_changes () {
@@ -47,7 +55,7 @@ push_changes () {
     return 0
   fi
 
-  echo "Commiting changes"
+  echo "Committing changes"
 
   git commit -m "[skip ci] Automatic update $(date "+%Y-%m-%d") (Build $TRAVIS_BUILD_NUMBER)" >/dev/null 2>&1
 
