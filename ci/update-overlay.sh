@@ -37,17 +37,28 @@ update_overlay () {
 }
 
 push_changes () {
-  echo "Push changes"
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis CI"
 
   git add -A >/dev/null 2>&1
+
+  if git diff-index --quiet HEAD >/dev/null 2>&1; then
+    echo "No changes since the last commit, exiting"
+    return 0
+  fi
+
+  echo "Commiting changes"
+
   git commit -m "[skip ci] Automatic update $(date "+%Y-%m-%d") (Build $TRAVIS_BUILD_NUMBER)" >/dev/null 2>&1
+
+  echo "Pushing"
 
   git remote rm origin >/dev/null 2>&1
   git remote add origin "${GITHUB_OAUTH_TOKEN}@github.com/Soft/nix-google-fonts-overlay.git" >/dev/null 2>&1
   git push origin master --quiet >/dev/null 2>&1
   git remote rm origin >/dev/null 2>&1
+
+  echo "Done"
 }
 
 main "$@"
