@@ -67,13 +67,25 @@ push_changes () {
 
   echo "Pushing"
 
-  git remote rm origin >/dev/null 2>&1
-  git remote add origin "https://${GITHUB_OAUTH_TOKEN}@github.com/Soft/nix-google-fonts-overlay.git" >/dev/null 2>&1
+  if ! git remote rm origin >/dev/null 2>&1; then
+    echo "Failed to remove origin"
+    return 1
+  fi
+
+  if ! git remote add origin "https://${GITHUB_OAUTH_TOKEN}@github.com/Soft/nix-google-fonts-overlay.git" >/dev/null 2>&1; then
+    echo "Failed to add origin";
+    return 1
+  fi
+
   if ! git push origin master --quiet >/dev/null 2>&1; then
     echo "Failed to push"
     return 1
   fi
-  git remote rm origin >/dev/null 2>&1
+
+  if ! git remote rm origin >/dev/null 2>&1; then
+    echo "Failed to remove origin"
+    return 1
+  fi
 
   echo "Done"
 }
