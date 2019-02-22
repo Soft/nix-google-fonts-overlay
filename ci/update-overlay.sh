@@ -49,7 +49,10 @@ push_changes () {
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis CI"
 
-  git add -A >/dev/null 2>&1
+  if ! git add -A >/dev/null 2>&1; then
+    echo "Failed to add files"
+    return 1
+  fi
 
   if git diff-index --quiet HEAD >/dev/null 2>&1; then
     echo "No changes since the last commit, exiting"
@@ -72,7 +75,7 @@ push_changes () {
     return 1
   fi
 
-  if ! git remote add origin "https://${GITHUB_OAUTH_TOKEN}@github.com/Soft/nix-google-fonts-overlay.git" >/dev/null 2>&1; then
+  if ! git remote add origin "https://${GITHUB_OAUTH_TOKEN}:x-oauth-basic@github.com/Soft/nix-google-fonts-overlay.git" >/dev/null 2>&1; then
     echo "Failed to add origin";
     return 1
   fi
