@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "herr-von-muellerhoff-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 HerrVonMuellerhoff-Regular.ttf $out/share/fonts/truetype/HerrVonMuellerhoff-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Herr Von Muellerhoff";
     license = licenses.ofl;
     platforms = platforms.all;

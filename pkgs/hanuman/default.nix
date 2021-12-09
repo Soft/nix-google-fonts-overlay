@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "hanuman-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Hanuman-Bold.ttf $out/share/fonts/truetype/Hanuman-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Hanuman";
     license = licenses.ofl;
     platforms = platforms.all;

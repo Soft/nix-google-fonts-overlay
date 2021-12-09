@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "alegreya-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Alegreya-BlackItalic.ttf $out/share/fonts/truetype/Alegreya-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Alegreya";
     license = licenses.ofl;
     platforms = platforms.all;

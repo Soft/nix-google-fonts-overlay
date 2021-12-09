@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "buda-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Buda-Light.ttf $out/share/fonts/truetype/Buda-Light.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Buda";
     license = licenses.ofl;
     platforms = platforms.all;

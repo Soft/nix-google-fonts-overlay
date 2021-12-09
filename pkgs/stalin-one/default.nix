@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "stalin-one-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 StalinOne-Regular.ttf $out/share/fonts/truetype/StalinOne-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Stalin One";
     license = licenses.ofl;
     platforms = platforms.all;

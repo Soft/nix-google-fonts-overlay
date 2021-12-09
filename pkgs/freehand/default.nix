@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "freehand-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Freehand.ttf $out/share/fonts/truetype/Freehand.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Freehand";
     license = licenses.ofl;
     platforms = platforms.all;

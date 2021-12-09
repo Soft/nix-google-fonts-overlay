@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "lobster-two-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LobsterTwo-BoldItalic.ttf $out/share/fonts/truetype/LobsterTwo-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Lobster Two";
     license = licenses.ofl;
     platforms = platforms.all;

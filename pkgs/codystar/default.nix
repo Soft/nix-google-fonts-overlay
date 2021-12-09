@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "codystar-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Codystar-Regular.ttf $out/share/fonts/truetype/Codystar-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Codystar";
     license = licenses.ofl;
     platforms = platforms.all;

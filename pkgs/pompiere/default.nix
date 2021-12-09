@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pompiere-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Pompiere-Regular.ttf $out/share/fonts/truetype/Pompiere-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Pompiere";
     license = licenses.ofl;
     platforms = platforms.all;

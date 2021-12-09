@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "just-another-hand-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 JustAnotherHand-Regular.ttf $out/share/fonts/truetype/JustAnotherHand-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Just Another Hand";
     license = licenses.asl20;
     platforms = platforms.all;

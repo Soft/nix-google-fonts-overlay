@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "unifrakturcook-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 UnifrakturCook-Bold.ttf $out/share/fonts/truetype/UnifrakturCook-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "UnifrakturCook";
     license = licenses.ofl;
     platforms = platforms.all;

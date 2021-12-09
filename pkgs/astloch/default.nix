@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "astloch-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Astloch-Bold.ttf $out/share/fonts/truetype/Astloch-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Astloch";
     license = licenses.ofl;
     platforms = platforms.all;

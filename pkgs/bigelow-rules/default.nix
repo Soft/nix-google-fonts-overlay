@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "bigelow-rules-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BigelowRules-Regular.ttf $out/share/fonts/truetype/BigelowRules-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bigelow Rules";
     license = licenses.ofl;
     platforms = platforms.all;

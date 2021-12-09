@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "lemonada-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Lemonada-Bold.ttf $out/share/fonts/truetype/Lemonada-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Lemonada";
     license = licenses.ofl;
     platforms = platforms.all;

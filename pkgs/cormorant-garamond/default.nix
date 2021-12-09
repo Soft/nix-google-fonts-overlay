@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "cormorant-garamond-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CormorantGaramond-BoldItalic.ttf $out/share/fonts/truetype/CormorantGaramond-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Cormorant Garamond";
     license = licenses.ofl;
     platforms = platforms.all;

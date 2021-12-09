@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "roboto-condensed-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 RobotoCondensed-BoldItalic.ttf $out/share/fonts/truetype/RobotoCondensed-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Roboto Condensed";
     license = licenses.asl20;
     platforms = platforms.all;

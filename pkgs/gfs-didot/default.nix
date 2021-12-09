@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "gfs-didot-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 GFSDidot-Regular.ttf $out/share/fonts/truetype/GFSDidot-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "GFS Didot";
     license = licenses.ofl;
     platforms = platforms.all;

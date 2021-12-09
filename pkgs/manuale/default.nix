@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "manuale-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Manuale-BoldItalic.ttf $out/share/fonts/truetype/Manuale-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Manuale";
     license = licenses.ofl;
     platforms = platforms.all;

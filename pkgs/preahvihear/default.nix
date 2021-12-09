@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "preahvihear-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Preahvihear.ttf $out/share/fonts/truetype/Preahvihear.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Preahvihear";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "tinos-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Tinos-BoldItalic.ttf $out/share/fonts/truetype/Tinos-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Tinos";
     license = licenses.asl20;
     platforms = platforms.all;

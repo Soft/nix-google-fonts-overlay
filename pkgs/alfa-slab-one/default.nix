@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "alfa-slab-one-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AlfaSlabOne-Regular.ttf $out/share/fonts/truetype/AlfaSlabOne-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Alfa Slab One";
     license = licenses.ofl;
     platforms = platforms.all;

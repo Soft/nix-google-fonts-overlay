@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "carter-one-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CarterOne.ttf $out/share/fonts/truetype/CarterOne.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Carter One";
     license = licenses.ofl;
     platforms = platforms.all;

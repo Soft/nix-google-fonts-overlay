@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "enriqueta-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Enriqueta-Bold.ttf $out/share/fonts/truetype/Enriqueta-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Enriqueta";
     license = licenses.ofl;
     platforms = platforms.all;

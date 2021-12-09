@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "permanent-marker-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PermanentMarker-Regular.ttf $out/share/fonts/truetype/PermanentMarker-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Permanent Marker";
     license = licenses.asl20;
     platforms = platforms.all;

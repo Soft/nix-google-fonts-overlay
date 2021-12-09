@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "wire-one-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 WireOne.ttf $out/share/fonts/truetype/WireOne.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Wire One";
     license = licenses.ofl;
     platforms = platforms.all;

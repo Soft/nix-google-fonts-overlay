@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "shadows-into-light-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ShadowsIntoLight.ttf $out/share/fonts/truetype/ShadowsIntoLight.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Shadows Into Light";
     license = licenses.ofl;
     platforms = platforms.all;

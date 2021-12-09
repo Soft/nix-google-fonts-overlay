@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pt-serif-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PT_Serif-Web-BoldItalic.ttf $out/share/fonts/truetype/PT_Serif-Web-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "PT Serif";
     license = licenses.ofl;
     platforms = platforms.all;

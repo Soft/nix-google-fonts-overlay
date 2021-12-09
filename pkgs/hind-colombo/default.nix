@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "hind-colombo-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 HindColombo-Bold.ttf $out/share/fonts/truetype/HindColombo-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Hind Colombo";
     license = licenses.ofl;
     platforms = platforms.all;

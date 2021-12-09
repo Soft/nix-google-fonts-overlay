@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "niramit-${version}";
@@ -90,7 +90,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Niramit-BoldItalic.ttf $out/share/fonts/truetype/Niramit-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Niramit";
     license = licenses.ofl;
     platforms = platforms.all;

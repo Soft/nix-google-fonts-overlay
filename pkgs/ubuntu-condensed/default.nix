@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ubuntu-condensed-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 UbuntuCondensed-Regular.ttf $out/share/fonts/truetype/UbuntuCondensed-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Ubuntu Condensed";
     license = licenses.ufl;
     platforms = platforms.all;

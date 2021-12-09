@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "yrsa-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Yrsa-Bold.ttf $out/share/fonts/truetype/Yrsa-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Yrsa";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "alef-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Alef-Bold.ttf $out/share/fonts/truetype/Alef-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Alef";
     license = licenses.ofl;
     platforms = platforms.all;

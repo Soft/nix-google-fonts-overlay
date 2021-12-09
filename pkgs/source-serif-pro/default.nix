@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "source-serif-pro-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SourceSerifPro-Black.ttf $out/share/fonts/truetype/SourceSerifPro-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Source Serif Pro";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "abeezee-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ABeeZee-Italic.ttf $out/share/fonts/truetype/ABeeZee-Italic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "ABeeZee";
     license = licenses.ofl;
     platforms = platforms.all;

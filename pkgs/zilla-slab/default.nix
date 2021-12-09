@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "zilla-slab-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ZillaSlab-BoldItalic.ttf $out/share/fonts/truetype/ZillaSlab-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Zilla Slab";
     license = licenses.ofl;
     platforms = platforms.all;

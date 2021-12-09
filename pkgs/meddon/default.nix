@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "meddon-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Meddon.ttf $out/share/fonts/truetype/Meddon.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Meddon";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "karla-tamil-upright-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 KarlaTamilUpright-Bold.ttf $out/share/fonts/truetype/KarlaTamilUpright-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Karla Tamil Upright";
     license = licenses.ofl;
     platforms = platforms.all;

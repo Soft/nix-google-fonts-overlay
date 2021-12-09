@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "cabin-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Cabin-BoldItalic.ttf $out/share/fonts/truetype/Cabin-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Cabin";
     license = licenses.ofl;
     platforms = platforms.all;

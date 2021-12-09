@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "gravitas-one-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 GravitasOne.ttf $out/share/fonts/truetype/GravitasOne.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Gravitas One";
     license = licenses.ofl;
     platforms = platforms.all;

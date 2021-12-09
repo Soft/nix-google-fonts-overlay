@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "open-sans-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 OpenSans-ExtraBoldItalic.ttf $out/share/fonts/truetype/OpenSans-ExtraBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Open Sans";
     license = licenses.asl20;
     platforms = platforms.all;

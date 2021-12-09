@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "nothing-you-could-do-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 NothingYouCouldDo.ttf $out/share/fonts/truetype/NothingYouCouldDo.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Nothing You Could Do";
     license = licenses.ofl;
     platforms = platforms.all;

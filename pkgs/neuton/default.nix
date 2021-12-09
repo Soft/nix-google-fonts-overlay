@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "neuton-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Neuton-ExtraBold.ttf $out/share/fonts/truetype/Neuton-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Neuton";
     license = licenses.ofl;
     platforms = platforms.all;

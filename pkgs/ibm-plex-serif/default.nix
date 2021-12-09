@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ibm-plex-serif-${version}";
@@ -102,7 +102,7 @@ stdenv.mkDerivation rec {
      install -Dm644 IBMPlexSerif-BoldItalic.ttf $out/share/fonts/truetype/IBMPlexSerif-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "IBM Plex Serif";
     license = licenses.ofl;
     platforms = platforms.all;

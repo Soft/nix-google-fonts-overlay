@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "modern-antiqua-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ModernAntiqua-Regular.ttf $out/share/fonts/truetype/ModernAntiqua-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Modern Antiqua";
     license = licenses.ofl;
     platforms = platforms.all;

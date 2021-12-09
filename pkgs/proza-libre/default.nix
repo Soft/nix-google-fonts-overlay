@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "proza-libre-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ProzaLibre-ExtraBoldItalic.ttf $out/share/fonts/truetype/ProzaLibre-ExtraBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Proza Libre";
     license = licenses.ofl;
     platforms = platforms.all;

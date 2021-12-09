@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "kirang-haerang-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 KirangHaerang-Regular.ttf $out/share/fonts/truetype/KirangHaerang-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Kirang Haerang";
     license = licenses.ofl;
     platforms = platforms.all;

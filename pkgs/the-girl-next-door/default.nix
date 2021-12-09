@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "the-girl-next-door-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 TheGirlNextDoor.ttf $out/share/fonts/truetype/TheGirlNextDoor.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "The Girl Next Door";
     license = licenses.ofl;
     platforms = platforms.all;

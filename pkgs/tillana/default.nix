@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "tillana-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Tillana-ExtraBold.ttf $out/share/fonts/truetype/Tillana-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Tillana";
     license = licenses.ofl;
     platforms = platforms.all;

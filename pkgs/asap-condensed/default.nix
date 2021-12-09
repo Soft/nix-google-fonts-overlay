@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "asap-condensed-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AsapCondensed-BoldItalic.ttf $out/share/fonts/truetype/AsapCondensed-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Asap Condensed";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "sansita-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Sansita-BlackItalic.ttf $out/share/fonts/truetype/Sansita-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sansita";
     license = licenses.ofl;
     platforms = platforms.all;

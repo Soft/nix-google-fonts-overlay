@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "quattrocento-sans-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 QuattrocentoSans-BoldItalic.ttf $out/share/fonts/truetype/QuattrocentoSans-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Quattrocento Sans";
     license = licenses.ofl;
     platforms = platforms.all;

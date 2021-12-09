@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "luckiest-guy-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LuckiestGuy-Regular.ttf $out/share/fonts/truetype/LuckiestGuy-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Luckiest Guy";
     license = licenses.asl20;
     platforms = platforms.all;

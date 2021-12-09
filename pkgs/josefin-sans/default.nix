@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "josefin-sans-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 JosefinSans-BoldItalic.ttf $out/share/fonts/truetype/JosefinSans-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Josefin Sans";
     license = licenses.ofl;
     platforms = platforms.all;

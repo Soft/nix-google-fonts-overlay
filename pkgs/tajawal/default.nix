@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "tajawal-${version}";
@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Tajawal-Black.ttf $out/share/fonts/truetype/Tajawal-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Tajawal";
     license = licenses.ofl;
     platforms = platforms.all;

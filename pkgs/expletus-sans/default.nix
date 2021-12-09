@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "expletus-sans-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ExpletusSans-BoldItalic.ttf $out/share/fonts/truetype/ExpletusSans-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Expletus Sans";
     license = licenses.ofl;
     platforms = platforms.all;

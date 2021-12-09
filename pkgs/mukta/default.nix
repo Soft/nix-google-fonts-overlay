@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "mukta-${version}";
@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Mukta-ExtraBold.ttf $out/share/fonts/truetype/Mukta-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Mukta";
     license = licenses.ofl;
     platforms = platforms.all;

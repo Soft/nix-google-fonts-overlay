@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "palanquin-dark-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PalanquinDark-Bold.ttf $out/share/fonts/truetype/PalanquinDark-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Palanquin Dark";
     license = licenses.ofl;
     platforms = platforms.all;

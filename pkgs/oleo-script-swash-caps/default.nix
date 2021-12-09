@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "oleo-script-swash-caps-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 OleoScriptSwashCaps-Bold.ttf $out/share/fonts/truetype/OleoScriptSwashCaps-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Oleo Script Swash Caps";
     license = licenses.ofl;
     platforms = platforms.all;

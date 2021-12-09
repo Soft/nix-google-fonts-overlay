@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "lakki-reddy-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LakkiReddy-Regular.ttf $out/share/fonts/truetype/LakkiReddy-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Lakki Reddy";
     license = licenses.ofl;
     platforms = platforms.all;

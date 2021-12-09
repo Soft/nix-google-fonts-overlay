@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "benchnine-${version}";
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BenchNine-Bold.ttf $out/share/fonts/truetype/BenchNine-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "BenchNine";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "mada-${version}";
@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Mada-Black.ttf $out/share/fonts/truetype/Mada-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Mada";
     license = licenses.ofl;
     platforms = platforms.all;

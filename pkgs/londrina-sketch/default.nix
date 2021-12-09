@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "londrina-sketch-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LondrinaSketch-Regular.ttf $out/share/fonts/truetype/LondrinaSketch-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Londrina Sketch";
     license = licenses.ofl;
     platforms = platforms.all;

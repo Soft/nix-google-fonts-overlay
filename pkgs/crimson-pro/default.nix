@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "crimson-pro-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CrimsonPro-ExtraLightItalic.ttf $out/share/fonts/truetype/CrimsonPro-ExtraLightItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Crimson Pro";
     license = licenses.ofl;
     platforms = platforms.all;

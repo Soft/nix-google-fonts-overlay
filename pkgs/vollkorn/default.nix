@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "vollkorn-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Vollkorn-Italic.ttf $out/share/fonts/truetype/Vollkorn-Italic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Vollkorn";
     license = licenses.ofl;
     platforms = platforms.all;

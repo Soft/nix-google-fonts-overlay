@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "macondo-swash-caps-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MacondoSwashCaps-Regular.ttf $out/share/fonts/truetype/MacondoSwashCaps-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Macondo Swash Caps";
     license = licenses.ofl;
     platforms = platforms.all;

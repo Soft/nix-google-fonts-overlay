@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "baloo-bhai-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BalooBhai-Regular.ttf $out/share/fonts/truetype/BalooBhai-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Baloo Bhai";
     license = licenses.ofl;
     platforms = platforms.all;

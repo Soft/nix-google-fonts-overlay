@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "jura-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Jura-Bold.ttf $out/share/fonts/truetype/Jura-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Jura";
     license = licenses.ofl;
     platforms = platforms.all;

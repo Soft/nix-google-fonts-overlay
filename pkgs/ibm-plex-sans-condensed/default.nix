@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ibm-plex-sans-condensed-${version}";
@@ -102,7 +102,7 @@ stdenv.mkDerivation rec {
      install -Dm644 IBMPlexSansCondensed-BoldItalic.ttf $out/share/fonts/truetype/IBMPlexSansCondensed-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "IBM Plex Sans Condensed";
     license = licenses.ofl;
     platforms = platforms.all;

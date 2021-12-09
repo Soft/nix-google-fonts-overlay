@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "poly-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Poly-Italic.ttf $out/share/fonts/truetype/Poly-Italic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Poly";
     license = licenses.ofl;
     platforms = platforms.all;

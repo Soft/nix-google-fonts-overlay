@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "rajdhani-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Rajdhani-Bold.ttf $out/share/fonts/truetype/Rajdhani-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Rajdhani";
     license = licenses.ofl;
     platforms = platforms.all;

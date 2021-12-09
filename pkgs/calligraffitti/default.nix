@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "calligraffitti-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Calligraffitti-Regular.ttf $out/share/fonts/truetype/Calligraffitti-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Calligraffitti";
     license = licenses.asl20;
     platforms = platforms.all;

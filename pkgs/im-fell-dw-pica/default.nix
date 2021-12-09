@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "im-fell-dw-pica-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 IMFePIit28P.ttf $out/share/fonts/truetype/IMFePIit28P.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "IM Fell DW Pica";
     license = licenses.ofl;
     platforms = platforms.all;

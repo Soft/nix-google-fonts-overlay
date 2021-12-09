@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "just-me-again-down-here-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 JustMeAgainDownHere.ttf $out/share/fonts/truetype/JustMeAgainDownHere.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Just Me Again Down Here";
     license = licenses.ofl;
     platforms = platforms.all;

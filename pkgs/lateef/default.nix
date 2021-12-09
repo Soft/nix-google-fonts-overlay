@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "lateef-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LateefRegOT.ttf $out/share/fonts/truetype/LateefRegOT.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Lateef";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "lohit-tamil-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Lohit-Tamil.ttf $out/share/fonts/truetype/Lohit-Tamil.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Lohit Tamil";
     license = licenses.ofl;
     platforms = platforms.all;

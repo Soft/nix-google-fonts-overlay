@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "kalam-${version}";
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Kalam-Bold.ttf $out/share/fonts/truetype/Kalam-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Kalam";
     license = licenses.ofl;
     platforms = platforms.all;

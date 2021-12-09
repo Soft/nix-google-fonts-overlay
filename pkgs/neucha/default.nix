@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "neucha-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Neucha.ttf $out/share/fonts/truetype/Neucha.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Neucha";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "eb-garamond-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 EBGaramond-ExtraBoldItalic.ttf $out/share/fonts/truetype/EBGaramond-ExtraBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "EB Garamond";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "gloria-hallelujah-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 GloriaHallelujah.ttf $out/share/fonts/truetype/GloriaHallelujah.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Gloria Hallelujah";
     license = licenses.ofl;
     platforms = platforms.all;

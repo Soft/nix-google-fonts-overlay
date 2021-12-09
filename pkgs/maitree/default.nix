@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "maitree-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Maitree-Bold.ttf $out/share/fonts/truetype/Maitree-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Maitree";
     license = licenses.ofl;
     platforms = platforms.all;

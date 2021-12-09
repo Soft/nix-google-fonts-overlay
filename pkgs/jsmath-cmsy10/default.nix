@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "jsmath-cmsy10-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 jsMath-cmsy10.ttf $out/share/fonts/truetype/jsMath-cmsy10.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "jsMath cmsy10";
     license = licenses.asl20;
     platforms = platforms.all;

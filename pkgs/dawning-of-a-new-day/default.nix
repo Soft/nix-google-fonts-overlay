@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "dawning-of-a-new-day-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 DawningofaNewDay.ttf $out/share/fonts/truetype/DawningofaNewDay.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Dawning of a New Day";
     license = licenses.ofl;
     platforms = platforms.all;

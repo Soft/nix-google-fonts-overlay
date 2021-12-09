@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "nunito-${version}";
@@ -102,7 +102,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Nunito-BlackItalic.ttf $out/share/fonts/truetype/Nunito-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Nunito";
     license = licenses.ofl;
     platforms = platforms.all;

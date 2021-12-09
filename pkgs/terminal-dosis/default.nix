@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "terminal-dosis-${version}";
@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
      install -Dm644 TerminalDosis-ExtraBold.ttf $out/share/fonts/truetype/TerminalDosis-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Terminal Dosis";
     license = licenses.ofl;
     platforms = platforms.all;

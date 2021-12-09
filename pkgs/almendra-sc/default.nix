@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "almendra-sc-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AlmendraSC-Regular.ttf $out/share/fonts/truetype/AlmendraSC-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Almendra SC";
     license = licenses.ofl;
     platforms = platforms.all;

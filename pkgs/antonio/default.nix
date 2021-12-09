@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "antonio-${version}";
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Antonio-Bold.ttf $out/share/fonts/truetype/Antonio-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Antonio";
     license = licenses.ofl;
     platforms = platforms.all;

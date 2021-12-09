@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "crafty-girls-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CraftyGirls-Regular.ttf $out/share/fonts/truetype/CraftyGirls-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Crafty Girls";
     license = licenses.asl20;
     platforms = platforms.all;

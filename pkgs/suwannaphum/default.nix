@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "suwannaphum-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Suwannaphum-Regular.ttf $out/share/fonts/truetype/Suwannaphum-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Suwannaphum";
     license = licenses.ofl;
     platforms = platforms.all;

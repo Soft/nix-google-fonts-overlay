@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "anonymous-pro-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AnonymousPro-BoldItalic.ttf $out/share/fonts/truetype/AnonymousPro-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Anonymous Pro";
     license = licenses.ofl;
     platforms = platforms.all;

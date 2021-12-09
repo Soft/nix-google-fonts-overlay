@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "kreon-${version}";
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Kreon-Bold.ttf $out/share/fonts/truetype/Kreon-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Kreon";
     license = licenses.ofl;
     platforms = platforms.all;

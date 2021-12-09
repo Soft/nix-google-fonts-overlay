@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "martel-sans-${version}";
@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MartelSans-Black.ttf $out/share/fonts/truetype/MartelSans-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Martel Sans";
     license = licenses.ofl;
     platforms = platforms.all;

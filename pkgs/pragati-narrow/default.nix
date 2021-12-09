@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pragati-narrow-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PragatiNarrow-Bold.ttf $out/share/fonts/truetype/PragatiNarrow-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Pragati Narrow";
     license = licenses.ofl;
     platforms = platforms.all;

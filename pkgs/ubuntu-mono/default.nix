@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ubuntu-mono-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 UbuntuMono-BoldItalic.ttf $out/share/fonts/truetype/UbuntuMono-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Ubuntu Mono";
     license = licenses.ufl;
     platforms = platforms.all;

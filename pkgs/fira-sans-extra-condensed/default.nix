@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "fira-sans-extra-condensed-${version}";
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
      install -Dm644 FiraSansExtraCondensed-BlackItalic.ttf $out/share/fonts/truetype/FiraSansExtraCondensed-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Fira Sans Extra Condensed";
     license = licenses.ofl;
     platforms = platforms.all;

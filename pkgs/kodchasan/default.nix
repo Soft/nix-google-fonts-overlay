@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "kodchasan-${version}";
@@ -90,7 +90,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Kodchasan-BoldItalic.ttf $out/share/fonts/truetype/Kodchasan-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Kodchasan";
     license = licenses.ofl;
     platforms = platforms.all;

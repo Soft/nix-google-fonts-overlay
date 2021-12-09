@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "diplomata-sc-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 DiplomataSC-Regular.ttf $out/share/fonts/truetype/DiplomataSC-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Diplomata SC";
     license = licenses.ofl;
     platforms = platforms.all;

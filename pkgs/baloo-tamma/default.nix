@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "baloo-tamma-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BalooTamma-Regular.ttf $out/share/fonts/truetype/BalooTamma-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Baloo Tamma";
     license = licenses.ofl;
     platforms = platforms.all;

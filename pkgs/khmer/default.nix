@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "khmer-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Khmer.ttf $out/share/fonts/truetype/Khmer.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Khmer";
     license = licenses.ofl;
     platforms = platforms.all;

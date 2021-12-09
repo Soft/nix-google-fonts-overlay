@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "share-tech-mono-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ShareTechMono-Regular.ttf $out/share/fonts/truetype/ShareTechMono-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Share Tech Mono";
     license = licenses.ofl;
     platforms = platforms.all;

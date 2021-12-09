@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "euphoria-script-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 EuphoriaScript-Regular.ttf $out/share/fonts/truetype/EuphoriaScript-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Euphoria Script";
     license = licenses.ofl;
     platforms = platforms.all;

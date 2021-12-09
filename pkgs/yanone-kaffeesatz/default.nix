@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "yanone-kaffeesatz-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 YanoneKaffeesatz-Bold.ttf $out/share/fonts/truetype/YanoneKaffeesatz-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Yanone Kaffeesatz";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "bio-rhyme-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BioRhyme-ExtraBold.ttf $out/share/fonts/truetype/BioRhyme-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bio Rhyme";
     license = licenses.ofl;
     platforms = platforms.all;

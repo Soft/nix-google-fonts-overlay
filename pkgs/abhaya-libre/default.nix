@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "abhaya-libre-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AbhayaLibre-ExtraBold.ttf $out/share/fonts/truetype/AbhayaLibre-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Abhaya Libre";
     license = licenses.ofl;
     platforms = platforms.all;

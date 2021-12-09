@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "exo-2-${version}";
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Exo2-BlackItalic.ttf $out/share/fonts/truetype/Exo2-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Exo 2";
     license = licenses.ofl;
     platforms = platforms.all;

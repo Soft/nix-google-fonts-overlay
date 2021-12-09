@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "averia-libre-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AveriaLibre-BoldItalic.ttf $out/share/fonts/truetype/AveriaLibre-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Averia Libre";
     license = licenses.ofl;
     platforms = platforms.all;

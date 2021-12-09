@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "nanum-myeongjo-${version}";
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
      install -Dm644 NanumMyeongjo-ExtraBold.ttf $out/share/fonts/truetype/NanumMyeongjo-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Nanum Myeongjo";
     license = licenses.ofl;
     platforms = platforms.all;

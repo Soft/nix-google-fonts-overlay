@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "gemunu-libre-${version}";
@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
      install -Dm644 GemunuLibre-ExtraBold.ttf $out/share/fonts/truetype/GemunuLibre-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Gemunu Libre";
     license = licenses.ofl;
     platforms = platforms.all;

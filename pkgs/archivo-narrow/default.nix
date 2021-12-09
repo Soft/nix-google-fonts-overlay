@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "archivo-narrow-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ArchivoNarrow-BoldItalic.ttf $out/share/fonts/truetype/ArchivoNarrow-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Archivo Narrow";
     license = licenses.ofl;
     platforms = platforms.all;

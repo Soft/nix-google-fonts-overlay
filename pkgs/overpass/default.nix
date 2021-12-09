@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "overpass-${version}";
@@ -114,7 +114,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Overpass-BlackItalic.ttf $out/share/fonts/truetype/Overpass-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Overpass";
     license = licenses.ofl;
     platforms = platforms.all;

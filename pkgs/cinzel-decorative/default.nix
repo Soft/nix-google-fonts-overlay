@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "cinzel-decorative-${version}";
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CinzelDecorative-Black.ttf $out/share/fonts/truetype/CinzelDecorative-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Cinzel Decorative";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pecita-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Pecita.ttf $out/share/fonts/truetype/Pecita.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Pecita";
     license = licenses.ofl;
     platforms = platforms.all;

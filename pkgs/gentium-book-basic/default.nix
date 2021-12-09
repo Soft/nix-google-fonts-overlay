@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "gentium-book-basic-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 GenBkBasBI.ttf $out/share/fonts/truetype/GenBkBasBI.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Gentium Book Basic";
     license = licenses.ofl;
     platforms = platforms.all;

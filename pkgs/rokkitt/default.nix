@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "rokkitt-${version}";
@@ -72,7 +72,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Rokkitt-Black.ttf $out/share/fonts/truetype/Rokkitt-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Rokkitt";
     license = licenses.ofl;
     platforms = platforms.all;

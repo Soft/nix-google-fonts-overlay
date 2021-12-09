@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "sarabun-${version}";
@@ -114,7 +114,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Sarabun-ExtraBoldItalic.ttf $out/share/fonts/truetype/Sarabun-ExtraBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sarabun";
     license = licenses.ofl;
     platforms = platforms.all;

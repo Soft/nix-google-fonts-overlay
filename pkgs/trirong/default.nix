@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "trirong-${version}";
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Trirong-BlackItalic.ttf $out/share/fonts/truetype/Trirong-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Trirong";
     license = licenses.ofl;
     platforms = platforms.all;

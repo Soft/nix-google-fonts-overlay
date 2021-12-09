@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "megrim-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Megrim.ttf $out/share/fonts/truetype/Megrim.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Megrim";
     license = licenses.ofl;
     platforms = platforms.all;

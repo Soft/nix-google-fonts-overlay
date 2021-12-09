@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "sorts-mill-goudy-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SortsMillGoudy-Italic.ttf $out/share/fonts/truetype/SortsMillGoudy-Italic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sorts Mill Goudy";
     license = licenses.ofl;
     platforms = platforms.all;

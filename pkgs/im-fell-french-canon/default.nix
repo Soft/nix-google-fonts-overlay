@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "im-fell-french-canon-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 IMFeFCit28P.ttf $out/share/fonts/truetype/IMFeFCit28P.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "IM Fell French Canon";
     license = licenses.ofl;
     platforms = platforms.all;

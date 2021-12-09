@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "la-belle-aurore-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LaBelleAurore.ttf $out/share/fonts/truetype/LaBelleAurore.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "La Belle Aurore";
     license = licenses.ofl;
     platforms = platforms.all;

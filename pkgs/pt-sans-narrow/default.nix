@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pt-sans-narrow-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PT_Sans-Narrow-Web-Bold.ttf $out/share/fonts/truetype/PT_Sans-Narrow-Web-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "PT Sans Narrow";
     license = licenses.ofl;
     platforms = platforms.all;

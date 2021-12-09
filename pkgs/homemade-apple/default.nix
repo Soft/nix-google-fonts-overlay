@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "homemade-apple-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 HomemadeApple-Regular.ttf $out/share/fonts/truetype/HomemadeApple-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Homemade Apple";
     license = licenses.asl20;
     platforms = platforms.all;

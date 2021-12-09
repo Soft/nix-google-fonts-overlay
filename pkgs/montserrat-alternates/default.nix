@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "montserrat-alternates-${version}";
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MontserratAlternates-BlackItalic.ttf $out/share/fonts/truetype/MontserratAlternates-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Montserrat Alternates";
     license = licenses.ofl;
     platforms = platforms.all;

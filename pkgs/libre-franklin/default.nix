@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "libre-franklin-${version}";
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LibreFranklin-BlackItalic.ttf $out/share/fonts/truetype/LibreFranklin-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Libre Franklin";
     license = licenses.ofl;
     platforms = platforms.all;

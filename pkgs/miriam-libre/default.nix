@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "miriam-libre-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MiriamLibre-Bold.ttf $out/share/fonts/truetype/MiriamLibre-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Miriam Libre";
     license = licenses.ofl;
     platforms = platforms.all;

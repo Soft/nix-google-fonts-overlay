@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "stardos-stencil-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 StardosStencil-Bold.ttf $out/share/fonts/truetype/StardosStencil-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Stardos Stencil";
     license = licenses.ofl;
     platforms = platforms.all;

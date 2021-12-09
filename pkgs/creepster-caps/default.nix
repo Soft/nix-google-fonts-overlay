@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "creepster-caps-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CreepsterCaps-Regular.ttf $out/share/fonts/truetype/CreepsterCaps-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Creepster Caps";
     license = licenses.asl20;
     platforms = platforms.all;

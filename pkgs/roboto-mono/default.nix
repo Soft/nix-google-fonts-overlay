@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "roboto-mono-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 RobotoMono-BoldItalic.ttf $out/share/fonts/truetype/RobotoMono-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Roboto Mono";
     license = licenses.asl20;
     platforms = platforms.all;

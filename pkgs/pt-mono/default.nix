@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pt-mono-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PTM55FT.ttf $out/share/fonts/truetype/PTM55FT.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "PT Mono";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "sue-ellen-francisco-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SueEllenFrancisco.ttf $out/share/fonts/truetype/SueEllenFrancisco.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sue Ellen Francisco";
     license = licenses.ofl;
     platforms = platforms.all;

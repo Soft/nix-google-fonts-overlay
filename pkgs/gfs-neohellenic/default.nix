@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "gfs-neohellenic-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 GFSNeohellenicBoldItalic.ttf $out/share/fonts/truetype/GFSNeohellenicBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "GFS Neohellenic";
     license = licenses.ofl;
     platforms = platforms.all;

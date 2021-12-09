@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pt-sans-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PT_Sans-Web-BoldItalic.ttf $out/share/fonts/truetype/PT_Sans-Web-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "PT Sans";
     license = licenses.ofl;
     platforms = platforms.all;

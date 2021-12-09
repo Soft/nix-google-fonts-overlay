@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "kdam-thmor-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 KdamThmor-Regular.ttf $out/share/fonts/truetype/KdamThmor-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Kdam Thmor";
     license = licenses.ofl;
     platforms = platforms.all;

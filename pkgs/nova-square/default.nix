@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "nova-square-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 NovaSquare.ttf $out/share/fonts/truetype/NovaSquare.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Nova Square";
     license = licenses.ofl;
     platforms = platforms.all;

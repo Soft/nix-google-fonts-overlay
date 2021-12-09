@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "taprom-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Taprom.ttf $out/share/fonts/truetype/Taprom.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Taprom";
     license = licenses.ofl;
     platforms = platforms.all;

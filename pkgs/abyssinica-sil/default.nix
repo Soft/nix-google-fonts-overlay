@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "abyssinica-sil-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AbyssinicaSIL-Regular.ttf $out/share/fonts/truetype/AbyssinicaSIL-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Abyssinica SIL";
     license = licenses.ofl;
     platforms = platforms.all;

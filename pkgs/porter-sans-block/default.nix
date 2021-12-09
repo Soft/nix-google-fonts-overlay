@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "porter-sans-block-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PorterSansBlock-Regular.ttf $out/share/fonts/truetype/PorterSansBlock-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Porter Sans Block";
     license = licenses.ofl;
     platforms = platforms.all;

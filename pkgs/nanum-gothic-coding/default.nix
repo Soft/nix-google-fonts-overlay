@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "nanum-gothic-coding-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 NanumGothicCoding-Bold.ttf $out/share/fonts/truetype/NanumGothicCoding-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Nanum Gothic Coding";
     license = licenses.ofl;
     platforms = platforms.all;

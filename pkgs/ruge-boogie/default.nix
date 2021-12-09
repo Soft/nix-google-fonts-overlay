@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ruge-boogie-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 RugeBoogie-Regular.ttf $out/share/fonts/truetype/RugeBoogie-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Ruge Boogie";
     license = licenses.ofl;
     platforms = platforms.all;

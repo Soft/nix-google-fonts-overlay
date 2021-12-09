@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "fredericka-the-great-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 FrederickatheGreat-Regular.ttf $out/share/fonts/truetype/FrederickatheGreat-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Fredericka the Great";
     license = licenses.ofl;
     platforms = platforms.all;

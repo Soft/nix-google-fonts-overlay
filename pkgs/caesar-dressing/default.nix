@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "caesar-dressing-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CaesarDressing-Regular.ttf $out/share/fonts/truetype/CaesarDressing-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Caesar Dressing";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "mali-${version}";
@@ -90,7 +90,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Mali-BoldItalic.ttf $out/share/fonts/truetype/Mali-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Mali";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "covered-by-your-grace-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CoveredByYourGrace.ttf $out/share/fonts/truetype/CoveredByYourGrace.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Covered By Your Grace";
     license = licenses.ofl;
     platforms = platforms.all;

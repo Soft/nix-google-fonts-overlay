@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "bai-jamjuree-${version}";
@@ -90,7 +90,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BaiJamjuree-BoldItalic.ttf $out/share/fonts/truetype/BaiJamjuree-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bai Jamjuree";
     license = licenses.ofl;
     platforms = platforms.all;

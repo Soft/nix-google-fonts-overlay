@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "merriweather-sans-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MerriweatherSans-ExtraBoldItalic.ttf $out/share/fonts/truetype/MerriweatherSans-ExtraBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Merriweather Sans";
     license = licenses.ofl;
     platforms = platforms.all;

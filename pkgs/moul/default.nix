@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "moul-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Moul.ttf $out/share/fonts/truetype/Moul.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Moul";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "elsie-swash-caps-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ElsieSwashCaps-Black.ttf $out/share/fonts/truetype/ElsieSwashCaps-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Elsie Swash Caps";
     license = licenses.ofl;
     platforms = platforms.all;

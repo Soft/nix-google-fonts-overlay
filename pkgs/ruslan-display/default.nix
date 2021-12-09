@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ruslan-display-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 RuslanDisplay.ttf $out/share/fonts/truetype/RuslanDisplay.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Ruslan Display";
     license = licenses.ofl;
     platforms = platforms.all;

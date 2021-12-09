@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "mouse-memoirs-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MouseMemoirs-Regular.ttf $out/share/fonts/truetype/MouseMemoirs-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Mouse Memoirs";
     license = licenses.ofl;
     platforms = platforms.all;

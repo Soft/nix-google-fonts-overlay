@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "siamreap-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Siemreap.ttf $out/share/fonts/truetype/Siemreap.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Siamreap";
     license = licenses.ofl;
     platforms = platforms.all;

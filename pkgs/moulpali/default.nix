@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "moulpali-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Moulpali.ttf $out/share/fonts/truetype/Moulpali.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Moulpali";
     license = licenses.ofl;
     platforms = platforms.all;

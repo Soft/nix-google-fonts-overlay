@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "cedarville-cursive-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Cedarville-Cursive.ttf $out/share/fonts/truetype/Cedarville-Cursive.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Cedarville Cursive";
     license = licenses.ofl;
     platforms = platforms.all;

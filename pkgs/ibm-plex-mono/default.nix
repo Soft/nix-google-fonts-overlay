@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ibm-plex-mono-${version}";
@@ -102,7 +102,7 @@ stdenv.mkDerivation rec {
      install -Dm644 IBMPlexMono-BoldItalic.ttf $out/share/fonts/truetype/IBMPlexMono-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "IBM Plex Mono";
     license = licenses.ofl;
     platforms = platforms.all;

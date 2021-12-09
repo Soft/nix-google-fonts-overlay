@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "mr-de-haviland-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MrDeHaviland-Regular.ttf $out/share/fonts/truetype/MrDeHaviland-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Mr De Haviland";
     license = licenses.ofl;
     platforms = platforms.all;

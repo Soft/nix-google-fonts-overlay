@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "patrick-hand-sc-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PatrickHandSC-Regular.ttf $out/share/fonts/truetype/PatrickHandSC-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Patrick Hand SC";
     license = licenses.ofl;
     platforms = platforms.all;

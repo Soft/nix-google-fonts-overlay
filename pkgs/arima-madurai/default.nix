@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "arima-madurai-${version}";
@@ -66,7 +66,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ArimaMadurai-Black.ttf $out/share/fonts/truetype/ArimaMadurai-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Arima Madurai";
     license = licenses.ofl;
     platforms = platforms.all;

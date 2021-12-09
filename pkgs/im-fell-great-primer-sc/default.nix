@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "im-fell-great-primer-sc-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 IMFeGPsc28P.ttf $out/share/fonts/truetype/IMFeGPsc28P.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "IM Fell Great Primer SC";
     license = licenses.ofl;
     platforms = platforms.all;

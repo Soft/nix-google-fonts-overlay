@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "caveat-brush-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CaveatBrush-Regular.ttf $out/share/fonts/truetype/CaveatBrush-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Caveat Brush";
     license = licenses.ofl;
     platforms = platforms.all;

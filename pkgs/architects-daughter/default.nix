@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "architects-daughter-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ArchitectsDaughter-Regular.ttf $out/share/fonts/truetype/ArchitectsDaughter-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Architects Daughter";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "encode-sans-semi-expanded-${version}";
@@ -72,7 +72,7 @@ stdenv.mkDerivation rec {
      install -Dm644 EncodeSansSemiExpanded-Black.ttf $out/share/fonts/truetype/EncodeSansSemiExpanded-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Encode Sans Semi Expanded";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pt-serif-caption-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PT_Serif-Caption-Web-Italic.ttf $out/share/fonts/truetype/PT_Serif-Caption-Web-Italic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "PT Serif Caption";
     license = licenses.ofl;
     platforms = platforms.all;

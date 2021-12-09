@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "nova-slim-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 NovaSlim.ttf $out/share/fonts/truetype/NovaSlim.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Nova Slim";
     license = licenses.ofl;
     platforms = platforms.all;

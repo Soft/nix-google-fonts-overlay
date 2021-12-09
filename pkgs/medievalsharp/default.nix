@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "medievalsharp-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MedievalSharp.ttf $out/share/fonts/truetype/MedievalSharp.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "MedievalSharp";
     license = licenses.ofl;
     platforms = platforms.all;

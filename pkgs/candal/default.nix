@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "candal-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Candal.ttf $out/share/fonts/truetype/Candal.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Candal";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "six-caps-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SixCaps.ttf $out/share/fonts/truetype/SixCaps.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Six Caps";
     license = licenses.ofl;
     platforms = platforms.all;

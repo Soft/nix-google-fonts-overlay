@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "barlow-semi-condensed-${version}";
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BarlowSemiCondensed-BlackItalic.ttf $out/share/fonts/truetype/BarlowSemiCondensed-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Barlow Semi Condensed";
     license = licenses.ofl;
     platforms = platforms.all;

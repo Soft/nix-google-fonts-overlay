@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "bubblegum-sans-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BubblegumSans-Regular.ttf $out/share/fonts/truetype/BubblegumSans-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bubblegum Sans";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "krub-${version}";
@@ -90,7 +90,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Krub-BoldItalic.ttf $out/share/fonts/truetype/Krub-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Krub";
     license = licenses.ofl;
     platforms = platforms.all;

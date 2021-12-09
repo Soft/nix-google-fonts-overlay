@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "lohit-bengali-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Lohit-Bengali.ttf $out/share/fonts/truetype/Lohit-Bengali.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Lohit Bengali";
     license = licenses.ofl;
     platforms = platforms.all;

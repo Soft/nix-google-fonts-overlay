@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "jsmath-cmti10-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 jsMath-cmti10.ttf $out/share/fonts/truetype/jsMath-cmti10.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "jsMath cmti10";
     license = licenses.asl20;
     platforms = platforms.all;

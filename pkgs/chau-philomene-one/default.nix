@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "chau-philomene-one-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ChauPhilomeneOne-Italic.ttf $out/share/fonts/truetype/ChauPhilomeneOne-Italic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Chau Philomene One";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "arbutus-slab-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ArbutusSlab-Regular.ttf $out/share/fonts/truetype/ArbutusSlab-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Arbutus Slab";
     license = licenses.ofl;
     platforms = platforms.all;

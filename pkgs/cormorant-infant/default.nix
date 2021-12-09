@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "cormorant-infant-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CormorantInfant-BoldItalic.ttf $out/share/fonts/truetype/CormorantInfant-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Cormorant Infant";
     license = licenses.ofl;
     platforms = platforms.all;

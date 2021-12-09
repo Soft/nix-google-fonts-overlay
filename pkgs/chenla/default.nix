@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "chenla-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Chenla.ttf $out/share/fonts/truetype/Chenla.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Chenla";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "cormorant-upright-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CormorantUpright-Bold.ttf $out/share/fonts/truetype/CormorantUpright-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Cormorant Upright";
     license = licenses.ofl;
     platforms = platforms.all;

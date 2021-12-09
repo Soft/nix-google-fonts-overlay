@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "saira-semi-condensed-${version}";
@@ -72,7 +72,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SairaSemiCondensed-Black.ttf $out/share/fonts/truetype/SairaSemiCondensed-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Saira Semi Condensed";
     license = licenses.ofl;
     platforms = platforms.all;

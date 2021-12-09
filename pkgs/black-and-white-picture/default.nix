@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "black-and-white-picture-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BlackAndWhitePicture-Regular.ttf $out/share/fonts/truetype/BlackAndWhitePicture-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Black And White Picture";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "thabit-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Thabit-BoldOblique.ttf $out/share/fonts/truetype/Thabit-BoldOblique.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Thabit";
     license = licenses.ofl;
     platforms = platforms.all;

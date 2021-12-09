@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "josefin-slab-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 JosefinSlab-BoldItalic.ttf $out/share/fonts/truetype/JosefinSlab-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Josefin Slab";
     license = licenses.ofl;
     platforms = platforms.all;

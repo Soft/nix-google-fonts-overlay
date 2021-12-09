@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "black-han-sans-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 BlackHanSans-Regular.ttf $out/share/fonts/truetype/BlackHanSans-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Black Han Sans";
     license = licenses.ofl;
     platforms = platforms.all;

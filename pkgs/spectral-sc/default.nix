@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "spectral-sc-${version}";
@@ -102,7 +102,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SpectralSC-ExtraBoldItalic.ttf $out/share/fonts/truetype/SpectralSC-ExtraBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Spectral SC";
     license = licenses.ofl;
     platforms = platforms.all;

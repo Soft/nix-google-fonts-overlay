@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "give-you-glory-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 GiveYouGlory.ttf $out/share/fonts/truetype/GiveYouGlory.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Give You Glory";
     license = licenses.ofl;
     platforms = platforms.all;

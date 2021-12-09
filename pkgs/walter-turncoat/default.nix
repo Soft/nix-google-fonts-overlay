@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "walter-turncoat-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 WalterTurncoat-Regular.ttf $out/share/fonts/truetype/WalterTurncoat-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Walter Turncoat";
     license = licenses.asl20;
     platforms = platforms.all;

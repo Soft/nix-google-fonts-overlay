@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "ribeye-marrow-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 RibeyeMarrow-Regular.ttf $out/share/fonts/truetype/RibeyeMarrow-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Ribeye Marrow";
     license = licenses.ofl;
     platforms = platforms.all;

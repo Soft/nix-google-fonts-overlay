@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "swanky-and-moo-moo-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SwankyandMooMoo.ttf $out/share/fonts/truetype/SwankyandMooMoo.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Swanky and Moo Moo";
     license = licenses.ofl;
     platforms = platforms.all;

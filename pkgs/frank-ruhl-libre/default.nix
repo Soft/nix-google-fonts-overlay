@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "frank-ruhl-libre-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 FrankRuhlLibre-Black.ttf $out/share/fonts/truetype/FrankRuhlLibre-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Frank Ruhl Libre";
     license = licenses.ofl;
     platforms = platforms.all;

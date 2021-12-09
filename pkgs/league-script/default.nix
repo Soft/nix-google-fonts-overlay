@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "league-script-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LeagueScript.ttf $out/share/fonts/truetype/LeagueScript.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "League Script";
     license = licenses.ofl;
     platforms = platforms.all;

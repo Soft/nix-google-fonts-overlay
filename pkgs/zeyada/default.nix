@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "zeyada-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Zeyada.ttf $out/share/fonts/truetype/Zeyada.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Zeyada";
     license = licenses.ofl;
     platforms = platforms.all;

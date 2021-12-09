@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "jolly-lodger-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 JollyLodger-Regular.ttf $out/share/fonts/truetype/JollyLodger-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Jolly Lodger";
     license = licenses.ofl;
     platforms = platforms.all;

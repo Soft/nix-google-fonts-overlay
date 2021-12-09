@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "markazi-text-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MarkaziText-Roman-VF.ttf $out/share/fonts/truetype/MarkaziText-Roman-VF.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Markazi Text";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "miss-saint-delafield-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MrsSaintDelafield-Regular.ttf $out/share/fonts/truetype/MrsSaintDelafield-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Miss Saint Delafield";
     license = licenses.ofl;
     platforms = platforms.all;

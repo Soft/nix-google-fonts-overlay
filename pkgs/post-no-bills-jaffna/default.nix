@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "post-no-bills-jaffna-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PostNoBillsJaffna-ExtraBold.ttf $out/share/fonts/truetype/PostNoBillsJaffna-ExtraBold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Post No Bills Jaffna";
     license = licenses.ofl;
     platforms = platforms.all;

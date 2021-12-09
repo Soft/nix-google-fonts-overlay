@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "chakra-petch-${version}";
@@ -78,7 +78,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ChakraPetch-BoldItalic.ttf $out/share/fonts/truetype/ChakraPetch-BoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Chakra Petch";
     license = licenses.ofl;
     platforms = platforms.all;

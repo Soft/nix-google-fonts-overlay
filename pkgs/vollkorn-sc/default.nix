@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "vollkorn-sc-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 VollkornSC-Black.ttf $out/share/fonts/truetype/VollkornSC-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Vollkorn SC";
     license = licenses.ofl;
     platforms = platforms.all;

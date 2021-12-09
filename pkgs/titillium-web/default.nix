@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "titillium-web-${version}";
@@ -84,7 +84,7 @@ stdenv.mkDerivation rec {
      install -Dm644 TitilliumWeb-Black.ttf $out/share/fonts/truetype/TitilliumWeb-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Titillium Web";
     license = licenses.ofl;
     platforms = platforms.all;

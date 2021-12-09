@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pt-sans-caption-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PT_Sans-Caption-Web-Bold.ttf $out/share/fonts/truetype/PT_Sans-Caption-Web-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "PT Sans Caption";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "roboto-slab-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 RobotoSlab-Bold.ttf $out/share/fonts/truetype/RobotoSlab-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Roboto Slab";
     license = licenses.asl20;
     platforms = platforms.all;

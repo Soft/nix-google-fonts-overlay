@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "butcherman-caps-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ButchermanCaps-Regular.ttf $out/share/fonts/truetype/ButchermanCaps-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Butcherman Caps";
     license = licenses.ofl;
     platforms = platforms.all;

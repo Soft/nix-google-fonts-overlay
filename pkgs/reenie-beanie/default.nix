@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "reenie-beanie-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ReenieBeanie.ttf $out/share/fonts/truetype/ReenieBeanie.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Reenie Beanie";
     license = licenses.ofl;
     platforms = platforms.all;

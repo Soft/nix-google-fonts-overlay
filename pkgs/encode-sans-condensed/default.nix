@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "encode-sans-condensed-${version}";
@@ -72,7 +72,7 @@ stdenv.mkDerivation rec {
      install -Dm644 EncodeSansCondensed-Black.ttf $out/share/fonts/truetype/EncodeSansCondensed-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Encode Sans Condensed";
     license = licenses.ofl;
     platforms = platforms.all;

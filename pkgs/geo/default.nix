@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "geo-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Geo-Oblique.ttf $out/share/fonts/truetype/Geo-Oblique.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Geo";
     license = licenses.ofl;
     platforms = platforms.all;

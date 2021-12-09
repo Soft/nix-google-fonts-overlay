@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "princess-sofia-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PrincessSofia-Regular.ttf $out/share/fonts/truetype/PrincessSofia-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Princess Sofia";
     license = licenses.ofl;
     platforms = platforms.all;

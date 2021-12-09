@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "k2d-${version}";
@@ -114,7 +114,7 @@ stdenv.mkDerivation rec {
      install -Dm644 K2D-ExtraBoldItalic.ttf $out/share/fonts/truetype/K2D-ExtraBoldItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "K2D";
     license = licenses.ofl;
     platforms = platforms.all;

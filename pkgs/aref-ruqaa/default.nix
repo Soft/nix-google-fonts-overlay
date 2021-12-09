@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "aref-ruqaa-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 ArefRuqaa-Bold.ttf $out/share/fonts/truetype/ArefRuqaa-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Aref Ruqaa";
     license = licenses.ofl;
     platforms = platforms.all;

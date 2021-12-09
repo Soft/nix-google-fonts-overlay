@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "delius-swash-caps-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 DeliusSwashCaps-Regular.ttf $out/share/fonts/truetype/DeliusSwashCaps-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Delius Swash Caps";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "jacques-francois-shadow-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 JacquesFrancoisShadow-Regular.ttf $out/share/fonts/truetype/JacquesFrancoisShadow-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Jacques Francois Shadow";
     license = licenses.ofl;
     platforms = platforms.all;

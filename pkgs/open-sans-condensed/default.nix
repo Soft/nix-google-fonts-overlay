@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "open-sans-condensed-${version}";
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
      install -Dm644 OpenSansCondensed-Bold.ttf $out/share/fonts/truetype/OpenSansCondensed-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Open Sans Condensed";
     license = licenses.asl20;
     platforms = platforms.all;

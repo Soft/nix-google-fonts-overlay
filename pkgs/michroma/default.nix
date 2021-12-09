@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "michroma-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Michroma.ttf $out/share/fonts/truetype/Michroma.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Michroma";
     license = licenses.ofl;
     platforms = platforms.all;

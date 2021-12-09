@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "loved-by-the-king-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LovedbytheKing.ttf $out/share/fonts/truetype/LovedbytheKing.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Loved by the King";
     license = licenses.ofl;
     platforms = platforms.all;

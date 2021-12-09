@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "snippet-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Snippet.ttf $out/share/fonts/truetype/Snippet.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Snippet";
     license = licenses.ofl;
     platforms = platforms.all;

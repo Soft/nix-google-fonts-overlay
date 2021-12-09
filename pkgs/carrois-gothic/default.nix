@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "carrois-gothic-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 CarroisGothic-Regular.ttf $out/share/fonts/truetype/CarroisGothic-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Carrois Gothic";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "hind-siliguri-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 HindSiliguri-Bold.ttf $out/share/fonts/truetype/HindSiliguri-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Hind Siliguri";
     license = licenses.ofl;
     platforms = platforms.all;

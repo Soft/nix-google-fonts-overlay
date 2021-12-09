@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "dangrek-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Dangrek.ttf $out/share/fonts/truetype/Dangrek.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Dangrek";
     license = licenses.ofl;
     platforms = platforms.all;

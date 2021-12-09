@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "sedgwick-ave-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SedgwickAve-Regular.ttf $out/share/fonts/truetype/SedgwickAve-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sedgwick Ave";
     license = licenses.ofl;
     platforms = platforms.all;

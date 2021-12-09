@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "montserrat-subrayada-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MontserratSubrayada-Bold.ttf $out/share/fonts/truetype/MontserratSubrayada-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Montserrat Subrayada";
     license = licenses.ofl;
     platforms = platforms.all;

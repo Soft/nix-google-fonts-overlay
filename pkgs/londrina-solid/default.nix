@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "londrina-solid-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LondrinaSolid-Black.ttf $out/share/fonts/truetype/LondrinaSolid-Black.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Londrina Solid";
     license = licenses.ofl;
     platforms = platforms.all;

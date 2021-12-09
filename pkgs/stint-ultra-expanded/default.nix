@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "stint-ultra-expanded-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 StintUltraExpanded-Regular.ttf $out/share/fonts/truetype/StintUltraExpanded-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Stint Ultra Expanded";
     license = licenses.ofl;
     platforms = platforms.all;

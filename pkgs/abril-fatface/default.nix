@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "abril-fatface-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 AbrilFatface-Regular.ttf $out/share/fonts/truetype/AbrilFatface-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Abril Fatface";
     license = licenses.ofl;
     platforms = platforms.all;

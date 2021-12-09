@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "maiden-orange-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MaidenOrange-Regular.ttf $out/share/fonts/truetype/MaidenOrange-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Maiden Orange";
     license = licenses.asl20;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "miltonian-tattoo-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MiltonianTattoo-Regular.ttf $out/share/fonts/truetype/MiltonianTattoo-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Miltonian Tattoo";
     license = licenses.ofl;
     platforms = platforms.all;

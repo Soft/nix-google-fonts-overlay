@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "yaldevi-colombo-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 YaldeviColombo-Bold.ttf $out/share/fonts/truetype/YaldeviColombo-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Yaldevi Colombo";
     license = licenses.ofl;
     platforms = platforms.all;

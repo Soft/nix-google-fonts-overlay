@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "libre-barcode-128-text-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LibreBarcode128Text-Regular.ttf $out/share/fonts/truetype/LibreBarcode128Text-Regular.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Libre Barcode 128 Text";
     license = licenses.ofl;
     platforms = platforms.all;

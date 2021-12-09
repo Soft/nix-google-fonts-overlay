@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "love-ya-like-a-sister-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 LoveYaLikeASister.ttf $out/share/fonts/truetype/LoveYaLikeASister.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Love Ya Like A Sister";
     license = licenses.ofl;
     platforms = platforms.all;

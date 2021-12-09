@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "source-sans-pro-${version}";
@@ -90,7 +90,7 @@ stdenv.mkDerivation rec {
      install -Dm644 SourceSansPro-BlackItalic.ttf $out/share/fonts/truetype/SourceSansPro-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Source Sans Pro";
     license = licenses.ofl;
     platforms = platforms.all;

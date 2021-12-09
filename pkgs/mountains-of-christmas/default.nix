@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "mountains-of-christmas-${version}";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
      install -Dm644 MountainsofChristmas-Bold.ttf $out/share/fonts/truetype/MountainsofChristmas-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Mountains of Christmas";
     license = licenses.asl20;
     platforms = platforms.all;

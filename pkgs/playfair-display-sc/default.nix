@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "playfair-display-sc-${version}";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
      install -Dm644 PlayfairDisplaySC-BlackItalic.ttf $out/share/fonts/truetype/PlayfairDisplaySC-BlackItalic.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Playfair Display SC";
     license = licenses.ofl;
     platforms = platforms.all;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "vesper-libre-${version}";
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
      install -Dm644 VesperLibre-Heavy.ttf $out/share/fonts/truetype/VesperLibre-Heavy.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Vesper Libre";
     license = licenses.ofl;
     platforms = platforms.all;

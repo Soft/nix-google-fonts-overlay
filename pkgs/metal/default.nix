@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "metal-${version}";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
      install -Dm644 Metal.ttf $out/share/fonts/truetype/Metal.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Metal";
     license = licenses.ofl;
     platforms = platforms.all;

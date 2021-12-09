@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "hind-jalandhar-${version}";
@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
      install -Dm644 HindJalandhar-Bold.ttf $out/share/fonts/truetype/HindJalandhar-Bold.ttf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Hind Jalandhar";
     license = licenses.ofl;
     platforms = platforms.all;
